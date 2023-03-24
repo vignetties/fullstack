@@ -60,3 +60,27 @@ In this example, the view is implemented using JSP (JavaServer Pages), but it co
 When the user submits the form, the controller is instantiated and passed the model. The controller then calls the `addNumbers` method on the model with the two numbers entered by the user, and returns the result. The result is then displayed on the page using the `out.println` method.
 
 Note that this is a very basic example and does not include error handling or input validation, which would be necessary in a real-world application.
+
+####################################################
+
+Certainly! Let me break down those three lines of code for you:
+
+
+
+`CalculatorModel model = new CalculatorModel();` 
+
+This line creates a new instance of the `CalculatorModel` class, which is the model component in our MVC architecture. We need to create an instance of the model in order to use its methods, which in this case is the `addNumbers()` method that will add the two numbers together.
+
+
+
+`CalculatorController controller = new CalculatorController(model);` 
+
+This line creates a new instance of the `CalculatorController` class, which is the controller component in our MVC architecture. The `CalculatorController` constructor takes an instance of the `CalculatorModel` class as a parameter, which is why we need to create an instance of the model first. This line essentially associates the model with the controller, so that the controller can access the model's methods to perform the necessary business logic.
+
+
+
+`int result = controller.addNumbers(num1, num2);` 
+
+This line calls the `addNumbers()` method on the `CalculatorController` instance we created earlier, passing in the two numbers `num1` and `num2` that the user entered. The `addNumbers()` method, in turn, calls the `addNumbers()` method on the `CalculatorModel` instance that we passed in earlier, which actually performs the addition of the two numbers. The result of this addition is then returned back to the `CalculatorController`, which returns it to the view for display.
+
+So in summary, these three lines of code create the necessary instances of the `CalculatorModel` and `CalculatorController` classes, associate them with each other, and then use them to perform the addition of the two numbers that the user entered.
